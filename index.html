@@ -1,5 +1,5 @@
 <!doctype html>
-<html class="no-js" lang="">
+<html class="no-js" lang="ja">
 
 <head>
   <meta charset="utf-8">
@@ -8,16 +8,7 @@
 
   <link rel="stylesheet" href="css/style.css">
 
-  <style>
-  .buttons{
-    width: 100px;
 
-    margin-left: auto;
-    margin-right: auto;
-
-
-  }
-  </style>
 
 </head>
 
@@ -31,20 +22,25 @@
      time();
      function time(){
          let now = new Date();
-         document.getElementById("time").innerHTML = now.toLocaleTimeString();
+         let currentTime = now.getHours() + ":" + now.getMinutes();
+         document.getElementById("time").innerHTML = currentTime;
      }
      setInterval('time()',1000);
      </script>
    </time>
 </div>
 
-<div class= "buttons">
 
-   <div id="startButton" class="beforeWork" ></div>
+
+   <div id="currentState" class="beforeWork" >出勤前</div>
+   <div class= "buttons">
+   <button id="startButton"></button>
    <button id="endButton" ></button>
 </div>
 
   <button id="showButton"></button>
+
+  <br>
 
 <recordedTime id="startTime" class="fs-2">
 </recordedTime>

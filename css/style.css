@@ -10,7 +10,7 @@
 .beforeWork{
    width: 100px;
    height: 100px;
-   background-color: skyblue;
+   background-color: gray;
    cursor: pointer;
    transition: 0.8s;
    text-align: center;
@@ -35,4 +35,10 @@
    color: white;
    font-weight: bold;
    transform: rotate(360deg);
+ }
+
+ .buttons{
+   margin-top: 10px;
+   display: flex;
+   justify-content: center;
  }

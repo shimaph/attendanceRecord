@@ -4,7 +4,8 @@ i = 0
 count = 0
 const getStartTime = () => {
   startTime = new Date(); //関数内でvarを使わないとグローバル変数になる
-  document.getElementById('startTime').innerHTML = startTime.toLocaleString();
+  startTimeInFormat = startTime.getMonth() + "/" + startTime.getDate() + " " + startTime.getHours() + "時" + startTime.getMinutes() + "分";//表示用
+  document.getElementById('startTime').innerHTML = startTimeInFormat;
 };
 
 const getEndTime = () => {
@@ -25,14 +26,13 @@ const getDiff = () => {
     diff = mins + "分";
   }
 
-  let startTimeInHM = startTime.getHours() + "時" + startTime.getMinutes() + "分";
+
   let endTimeInHM = endTime.getHours() + "時" + endTime.getMinutes() + "分";
 
-  let MM = startTime.getMonth();
-  let DD = startTime.getDate();
+
 
   i += 1;
-  l.setItem("workTime" + i.toString(), MM + "/" + DD + " " + startTimeInHM + "-" + endTimeInHM + " " + diff);
+  l.setItem("workTime" + i.toString(), startTimeInFormat + "-" + endTimeInHM + " " + diff);
   console.log(l.getItem("workTime"+ i.toString()))
 
 
@@ -49,11 +49,12 @@ const getDiffSec = () => {
 
 
 const start = '出勤';
-const end = '＞　退勤';
+const end = '退勤';
 
 startButton = document.getElementById('startButton');
 endButton = document.getElementById('endButton');
 showButton = document.getElementById('showButton');
+currentState = document.getElementById('currentState')
 
 startButton.textContent = start;
 endButton.textContent = end;
@@ -65,11 +66,10 @@ startButton.addEventListener('click',()=>{
   if(count == 0){
     confirmStart = confirm("作業を開始しますか？");
     if(confirmStart == true){
-      alert("出勤開始時間を記録しました。")
       count += 1;
       getStartTime();
-      startButton.classList.add('duringWork');
-      startButton.textContent = "出勤中"
+      currentState.classList.add('duringWork');
+      currentState.textContent = "出勤中"
     }
   } else {
     alert("現在出勤中です。")
