@@ -19,12 +19,13 @@ time {
 
 
 .beforeWork{
-   width: 100px;
-   height: 100px;
+   font-size: 25px;
+   width: 150px;
+   height: 150px;
    background-color: gray;
    transition: 0.8s;
    text-align: center;
-   line-height: 100px;
+   line-height: 150px;
    margin-left: auto;
    margin-right: auto;
    color: white;
@@ -32,13 +33,14 @@ time {
  }
 
  .duringWork{
-   width: 100px;
-   height: 100px;
+   font-size: 25px;
+   width: 150px;
+   height: 150px;
    border-radius: 50%;
    background-color: orange;
    transition: 0.8s;
    text-align: center;
-   line-height: 100px;
+   line-height: 150px;
    margin-left: auto;
    margin-right: auto;
    color: white;
@@ -47,13 +49,14 @@ time {
  }
 
  .workDone{
-   width: 100px;
-   height: 100px;
+   font-size: 25px;
+   width: 150px;
+   height: 150px;
    border-radius: 50%;
    background-color: pink;
    transition: 0.8s;
    text-align: center;
-   line-height: 100px;
+   line-height: 150px;
    margin-left: auto;
    margin-right: auto;
    color: white;

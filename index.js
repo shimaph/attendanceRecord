@@ -55,8 +55,9 @@ const getDiff = () => {
 
 
   i += 1;
+  l.setItem("i", i)
   l.setItem("workTime" + i.toString(), startTimeInFormat + "-" + endTimeInHM + " " + diff);
-  console.log(l.getItem("workTime"+ i.toString()))
+  console.log(l.getItem("workTime"+ i.toString()));
 
 
   console.log(i);
@@ -119,30 +120,44 @@ endButton.addEventListener('click',()=>{
 })
 
 showButton.addEventListener('click', () => {
- for(; i > 0; i--){
-   div = document.createElement('div');
-   div.classList.add("showTime")
-   div.id = 'copyTarget'
-   div.textContent = l.getItem("workTime"+ i.toString());
-   document.body.appendChild(div);
- }
+  var submit = window.open("submit.html", "提出用", "width = 300, height = 300");
+  // forSubmit();
+})
 
-console.log(div)
+//
+// const forSubmit = () => {
+// for(; i > 0; i--){
+//   submit = l.getItem("workTime" + i.toString());
+//   submitS =
+// }
+// console.log(submit);
+//
+// }
+// showButton.addEventListener('click', () => {
+//  for(; i > 0; i--){
+//    div = document.createElement('div');
+//    div.classList.add("showTime")
+//    div.id = 'copyTarget'
+//    div.textContent = l.getItem("workTime"+ i.toString());
+//    document.body.appendChild(div);
+//  }
 
- let button = document.createElement('button');
- button.textContent = "コピー";
- document.body.appendChild(button);
-
- console.log();
-
- button.addEventListener('click', () => {
-   let copyTarget = document.querySelector("#copyTarget").innerText;
-   console.log(copyTarget);
-   navigator.clipboard.writeText(copyTarget);
-
-  })
-
-});
+// console.log(div)
+//
+//  let button = document.createElement('button');
+//  button.textContent = "コピー";
+//  document.body.appendChild(button);
+//
+//  console.log();
+//
+//  button.addEventListener('click', () => {
+//    let copyTarget = document.querySelector("#copyTarget").innerText;
+//    console.log(copyTarget);
+//    navigator.clipboard.writeText(copyTarget);
+//
+//   })
+//
+// });
 
 
 

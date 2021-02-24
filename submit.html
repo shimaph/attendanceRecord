@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+
+<html lang="ja">
+  <head>
+  </head>
+  <body>
+
+    <script>
+      'use strict';
+      let num = localStorage.getItem("i");
+
+      for(; num > 0; num --){
+        let p = document.createElement('t');
+        p.textContent = localStorage.getItem("workTime" + num);
+        document.body.appendChild(p);
+        document.body.appendChild(document.createElement('br'))
+        console.log(p.textContent);
+    }
+    </script>
+
+  </body>
+</html>
