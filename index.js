@@ -3,6 +3,18 @@ let l = localStorage;
 i = 0
 count = 0
 
+// sleep関数
+
+
+currentState = document.getElementById('currentState');
+
+
+
+currentState.classList.add('beforeWork');
+currentState.textContent = ('出勤前');
+
+
+
 
 time();
 function time(){
@@ -59,13 +71,15 @@ const getDiffSec = () => {
 };
 
 
+
+
 const start = '出勤';
 const end = '退勤';
 
 startButton = document.getElementById('startButton');
 endButton = document.getElementById('endButton');
 showButton = document.getElementById('showButton');
-currentState = document.getElementById('currentState')
+
 
 startButton.textContent = start;
 endButton.textContent = end;
@@ -79,8 +93,9 @@ startButton.addEventListener('click',()=>{
     if(confirmStart == true){
       count += 1;
       getStartTime();
+      currentState.classList.remove('beforeWork');
       currentState.classList.add('duringWork');
-      currentState.textContent = "出勤中"
+      currentState.textContent = "出勤中";
     }
   } else {
     alert("現在出勤中です。")
@@ -94,6 +109,8 @@ endButton.addEventListener('click',()=>{
       getEndTime();
       count -= 1;
       getDiff();
+      doneAni();
+
       // saveHours();
     }
   } else {
@@ -131,8 +148,25 @@ console.log(div)
 
 button = document.getElementById('copy');
 
-function copyToClipboard() {
-  let copyTarget = l.getItem("workTime"+ i.toString());
-  copyTarget.select();
-  document.execComand("Copy");
+// function copyToClipboard() {
+//   let copyTarget = l.getItem("workTime"+ i.toString());
+//   copyTarget.select();
+//   document.execComand("Copy");
+// }
+
+
+// 勤務終了後のアニメーション関数
+
+const doneAni = () => {
+  currentState.classList.remove("duringWork");
+  currentState.classList.add("workDone");
+  currentState.textContent = "おつかれさま";
+  setTimeout(
+    function () {
+      currentState.classList.remove("workDone");
+      currentState.classList.add("beforeWork");
+      currentState.textContent = "出勤前"
+    },
+    "4000"
+  );
 }
