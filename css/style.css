@@ -4,8 +4,19 @@
   font-size: 30px;
   margin-top: 30px;
   margin-bottom: 30px;
+  margin-left: auto;
+  margin-right: auto;
   background-color: #efefef;
+  display: flex;
+  justify-content: center;
+
+
 }
+
+time {
+  margin-top: 30px;
+}
+
 
 .beforeWork{
    width: 100px;

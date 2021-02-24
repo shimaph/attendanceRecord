@@ -2,6 +2,17 @@
 let l = localStorage;
 i = 0
 count = 0
+
+
+time();
+function time(){
+    let now = new Date();
+    let currentTime = now.getHours() + ":" + now.getMinutes();
+    document.getElementById("time").textContent = currentTime;
+}
+setInterval('time()',1000);
+
+
 const getStartTime = () => {
   startTime = new Date(); //関数内でvarを使わないとグローバル変数になる
   startTimeInFormat = startTime.getMonth() + "/" + startTime.getDate() + " " + startTime.getHours() + "時" + startTime.getMinutes() + "分";//表示用
@@ -92,10 +103,36 @@ endButton.addEventListener('click',()=>{
 
 showButton.addEventListener('click', () => {
  for(; i > 0; i--){
-   let div = document.createElement('div');
+   div = document.createElement('div');
+   div.classList.add("showTime")
+   div.id = 'copyTarget'
    div.textContent = l.getItem("workTime"+ i.toString());
    document.body.appendChild(div);
  }
 
+console.log(div)
+
+ let button = document.createElement('button');
+ button.textContent = "コピー";
+ document.body.appendChild(button);
+
+ console.log();
+
+ button.addEventListener('click', () => {
+   let copyTarget = document.querySelector("#copyTarget").innerText;
+   console.log(copyTarget);
+   navigator.clipboard.writeText(copyTarget);
+
+  })
 
 });
+
+
+
+button = document.getElementById('copy');
+
+function copyToClipboard() {
+  let copyTarget = l.getItem("workTime"+ i.toString());
+  copyTarget.select();
+  document.execComand("Copy");
+}
