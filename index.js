@@ -124,50 +124,11 @@ showButton.addEventListener('click', () => {
   // forSubmit();
 })
 
-//
-// const forSubmit = () => {
-// for(; i > 0; i--){
-//   submit = l.getItem("workTime" + i.toString());
-//   submitS =
-// }
-// console.log(submit);
-//
-// }
-// showButton.addEventListener('click', () => {
-//  for(; i > 0; i--){
-//    div = document.createElement('div');
-//    div.classList.add("showTime")
-//    div.id = 'copyTarget'
-//    div.textContent = l.getItem("workTime"+ i.toString());
-//    document.body.appendChild(div);
-//  }
-
-// console.log(div)
-//
-//  let button = document.createElement('button');
-//  button.textContent = "コピー";
-//  document.body.appendChild(button);
-//
-//  console.log();
-//
-//  button.addEventListener('click', () => {
-//    let copyTarget = document.querySelector("#copyTarget").innerText;
-//    console.log(copyTarget);
-//    navigator.clipboard.writeText(copyTarget);
-//
-//   })
-//
-// });
 
 
 
 button = document.getElementById('copy');
 
-// function copyToClipboard() {
-//   let copyTarget = l.getItem("workTime"+ i.toString());
-//   copyTarget.select();
-//   document.execComand("Copy");
-// }
 
 
 // 勤務終了後のアニメーション関数
