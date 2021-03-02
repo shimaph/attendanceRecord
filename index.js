@@ -7,9 +7,6 @@ count = 0
 
 
 currentState = document.getElementById('currentState');
-
-
-
 currentState.classList.add('beforeWork');
 currentState.textContent = ('出勤前');
 
@@ -28,12 +25,12 @@ setInterval('time()',1000);
 const getStartTime = () => {
   startTime = new Date(); //関数内でvarを使わないとグローバル変数になる
   startTimeInFormat = startTime.getMonth() + "/" + startTime.getDate() + " " + startTime.getHours() + "時" + startTime.getMinutes() + "分";//表示用
-  document.getElementById('startTime').innerHTML = startTimeInFormat;
+  // document.getElementById('startTime').innerHTML = startTimeInFormat;
 };
 
 const getEndTime = () => {
   endTime = new Date();
-  document.getElementById('endTime').innerHTML = endTime.toLocaleString();
+  // document.getElementById('endTime').innerHTML = endTime.toLocaleString();
 };
 
 
@@ -61,7 +58,7 @@ const getDiff = () => {
 
 
   console.log(i);
-  document.getElementById('workedTime').textContent = diff;
+  // document.getElementById('workedTime').textContent = diff;
 };
 
 
